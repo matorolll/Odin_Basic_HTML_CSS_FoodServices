@@ -103,6 +103,21 @@ header > h1{
 }
 
 
+.article-summary{
+    background: rgb(56, 48, 48);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.article-info{
+    padding: 2rem;
+
+}
+.article-info a {
+    padding: 5px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
 
 
 .footer-content {
