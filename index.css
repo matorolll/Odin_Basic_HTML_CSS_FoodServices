@@ -93,7 +93,7 @@ header > h1{
 }
 .article-content .card-title{
     margin: 1rem 0;
-    color:22447b;
+    color:#22447b;
 }
 .article content .card-excerpt{
     font-size:1rem;
@@ -103,20 +103,41 @@ header > h1{
 }
 
 
-.article-summary{
+.article-summary {
     background: rgb(56, 48, 48);
     border-radius: 20px;
     transition: 0.3s;
 }
-.article-info{
-    padding: 2rem;
 
+.article-info {
+    background: rgb(102, 95, 95);
+    border-radius:20px;
 }
+
 .article-info a {
-    padding: 5px;
     text-decoration: none;
     color: #ffffff;
+ }
+
+
+
+.article-summary button {
+    border: 0;
+    width: 33.33%;
+    height: 45px;
+    background: rgb(48, 47, 47);
+    cursor: pointer;
+    float: left;
 }
+.article-summary button:first-child { border-radius: 20px 0 0 0;}
+.article-summary button:nth-child(3) { border-radius: 0 20px 0 0;}
+
+.article-summary button a {
+    color: white;
+    text-decoration: none;
+}
+
+
 
 
 
