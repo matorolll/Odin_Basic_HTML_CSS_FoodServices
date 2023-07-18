@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" rel="stylesheet"/>
-    <link href="index-animations.css" rel="stylesheet"/>
+    <link href="index.css" rel="stylesheet" />
+    <!--<link href="index-animations.css" rel="stylesheet"/>
+     -->
+    <script src="script.js"></script>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -28,10 +30,10 @@
     <div class="mainmenu">
         <div class="article-container">
             <article class="article-summary">
-                <button><a href="#">Allegrens</a></button>
-                <button><a href="#">Build</a></button>
-                <button><a href="#">Others</a></button>
-                <p class="card-excerpt"> Lorem ipsu dolori Lorem ipsu dolori Lorem ipsu dolori</p>
+                <button onclick="buttonPress('Allergens')"><a href="#">Allegrens</a></button>
+                <button onclick="buttonPress('Build')"><a href="#">Build</a></button>
+                <button onclick="buttonPress('Others')"><a href="#">Others</a></button>
+                <p class="card-excerpt" id="ShowingDetails"> Lorem ipsu dolori Lorem ipsu dolori Lorem ipsu dolori</p>
             </article>
             <article class="article-card">
                 <figure class="article-image">
