@@ -18,7 +18,8 @@ const articleDataFromFile = [
         imageAlt: 'Spaghetti',
         category: 'Food',
         title: 'Spaghetti',
-        excerpt: 'Historia spaghetti: Spaghetti jest tradycyjną włoską potrawą, która pochodzi z regionu Neapolu. Pierwsze wzmianki o spaghetti można znaleźć w dokumentach datowanych na XIII wiek. Współcześnie spaghetti jest popularne na całym świecie i jest podawane w różnych wariantach z różnymi sosami i dodatkami.'
+        excerpt: 'Historia spaghetti: Spaghetti jest tradycyjną włoską potrawą, która pochodzi z regionu Neapolu. Pierwsze wzmianki o spaghetti można znaleźć w dokumentach datowanych na XIII wiek. Współcześnie spaghetti jest popularne na całym świecie i jest podawane w różnych wariantach z różnymi sosami i dodatkami.',
+        allergens: "something",
     },  
     {
         imageSrc: 'statics/dish2.png',
@@ -88,7 +89,7 @@ const articleDataFromFile = [
 
 const articleContainer = document.getElementsByClassName('article-container')[0];
 
-articleDataFromFile.forEach(data => {
+function createArticleElement(data) {
     const article = document.createElement('article');
     const figure = document.createElement('figure');
     const img = document.createElement('img');
@@ -118,11 +119,48 @@ articleDataFromFile.forEach(data => {
     article.appendChild(figure);
     article.appendChild(div);
 
-    articleContainer.appendChild(article);
+    return article;
+}
+
+function renderArticles() {
+    articleDataFromFile.forEach(data => {
+        const article = createArticleElement(data);
+        articleContainer.appendChild(article);
+    });
+}
+
+function filterContentByString() {
+    const inputValue = document.querySelector('input[name="q"]').value.toLowerCase();
+    const articles = articleContainer.getElementsByClassName('article-card');
+
+    Array.from(articles).forEach(article => {
+        const title = article.querySelector('.card-title').textContent.toLowerCase();
+        const excerpt = article.querySelector('.card-excerpt').textContent.toLowerCase();
+        const category = article.querySelector('.card-category').textContent.toLowerCase();
+
+        if (title.includes(inputValue) || excerpt.includes(inputValue)  || category.includes(inputValue)) {
+            article.style.display = 'block';
+        } else {
+            article.style.display = 'none';
+        }
+    });
+}
+
+renderArticles();
+
+
+
+
+function showArticleDetails(event) {
+    const articleCard = event.currentTarget;
+    console.log(articleCard)
+}
+
+
+
+
+
+const articleCards = document.getElementsByClassName('article-card');
+Array.from(articleCards).forEach(card => {
+    card.addEventListener('click', showArticleDetails);
 });
-
-
-
-
-
-
