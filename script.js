@@ -12,62 +12,117 @@ function buttonPress(option){
     }
 }
 
-
-
-// script.js
-
-// Dane dla artyku��w z pliku (za��my, �e s� to dane w formacie JSON)
 const articleDataFromFile = [
     {
         imageSrc: 'statics/dish1.png',
         imageAlt: 'Spaghetti',
-        category: 'Travel',
-        title: 'Some title',
-        excerpt: 'Lorem ipsum dolor sit amet.'
+        category: 'Food',
+        title: 'Spaghetti',
+        excerpt: 'Historia spaghetti: Spaghetti jest tradycyjną włoską potrawą, która pochodzi z regionu Neapolu. Pierwsze wzmianki o spaghetti można znaleźć w dokumentach datowanych na XIII wiek. Współcześnie spaghetti jest popularne na całym świecie i jest podawane w różnych wariantach z różnymi sosami i dodatkami.'
+    },  
+    {
+        imageSrc: 'statics/dish2.png',
+        imageAlt: 'Salad',
+        category: 'Food',
+        title: 'Salad',
+        excerpt: 'Historia sałatki: Sałatka jest lekkim daniem składającym się z różnych świeżych składników takich jak warzywa, owoce, mięso lub ryby. Pierwsze sałatki pojawiły się już w starożytności, gdzie były spożywane jako środek na ochłodzenie organizmu. Obecnie sałatki są szeroko rozpowszechnione i istnieje wiele różnych rodzajów sałatek z różnymi składnikami i sosami.'
     },
-    // Dodaj wi�cej obiekt�w z danymi dla kolejnych artyku��w
+    {
+        imageSrc: 'statics/dish3.png',
+        imageAlt: 'Pizza',
+        category: 'Food',
+        title: 'Pizza',
+        excerpt: 'Historia pizzy: Pizza jest klasycznym daniem włoskim, które ma długą historię sięgającą starożytności. Pierwsze wzmianki o podobnych daniach do pizzy pochodzą z czasów starożytnego Egiptu i Grecji. Jednak współczesna pizza, z charakterystycznym ciastem z pomidorowym sosem i różnymi dodatkami, wywodzi się z Neapolu w XIX wieku. Dziś pizza jest jednym z najpopularniejszych dań na świecie.'
+    },
+    {
+        imageSrc: 'statics/dish4.png',
+        imageAlt: 'Burger',
+        category: 'Food',
+        title: 'Burger',
+        excerpt: 'Historia burgera: Burger, znany również jako hamburger, jest popularnym daniem fast foodowym. Pierwsze hamburgery zaczęły się pojawiać w XIX wieku w Stanach Zjednoczonych. Powszechnie uważa się, że pierwszy hamburger został stworzony w 1900 roku przez Louisa Laskera, który otworzył swoją restaurację w New Haven, Connecticut. Od tego czasu hamburgery zdobyły ogromną popularność i stały się symbolem kultury fast foodowej.'
+    },
+    {
+        imageSrc: 'statics/dish5.png',
+        imageAlt: 'Sushi',
+        category: 'Food',
+        title: 'Sushi',
+        excerpt: 'Historia sushi: Sushi jest tradycyjnym japońskim daniem, które ma ponad 1000 lat historii. Pierwsze formy sushi pojawiły się w VIII wieku w Japonii i były używane jako sposób na przechowywanie ryb w fermentowanym ryżu. Wraz z upływem czasu sushi ewoluowało i różne style sushi powstały w różnych regionach Japonii. Dziś sushi jest popularne na całym świecie i jest znane ze swojej świeżości, precyzji i różnorodności.'
+    },
+    {
+        imageSrc: 'statics/dish6.png',
+        imageAlt: 'Taco',
+        category: 'Food',
+        title: 'Taco',
+        excerpt: 'Historia taco: Taco jest tradycyjnym meksykańskim daniem, które ma długą historię sięgającą czasów prekolumbijskich. Pierwsze tacos były przygotowywane przez Azteków i Mayów, którzy używali tortilli do owinięcia różnych składników, takich jak mięso, warzywa i owoce morza. Tacos zyskały popularność w Meksyku i zostały przyjęte przez inne kultury na całym świecie. Dziś taco jest jednym z najbardziej rozpoznawalnych dań meksykańskich.'
+    },
+    {
+        imageSrc: 'statics/dish7.png',
+        imageAlt: 'Pierogi',
+        category: 'Food',
+        title: 'Pierogi',
+        excerpt: 'Historia pierogów: Pierogi są tradycyjnym daniem kuchni słowiańskiej, szczególnie popularnym w Polsce, Rosji, Ukrainie i innych krajach regionu. Pierwsze wzmianki o pierogach pochodzą z XIII wieku, ale przepis na pierogi był przekazywany z pokolenia na pokolenie przez wieki. Pierogi są małymi pierożkami, które są wypełnione różnymi składnikami, takimi jak mięso, kapusta, ser, owoce i inne. Są gotowane lub smażone i często podawane z sosem.'
+    },
+    {
+        imageSrc: 'statics/dish8.png',
+        imageAlt: 'Curry',
+        category: 'Food',
+        title: 'Curry',
+        excerpt: 'Historia curry: Curry to popularne danie z kuchni indyjskiej, które ma długą historię sięgającą tysiące lat. Pierwsze wzmianki o curry można znaleźć w starożytnych tekstach indyjskich datowanych na IV wiek p.n.e. Curry składa się z różnych przypraw, takich jak kurkuma, kolendra, cynamon, kardamon i inne, które są używane do przygotowania aromatycznego sosu. Curry jest podawane z różnymi składnikami, takimi jak mięso, ryby, warzywa i ryż.'
+    }, 
+    {
+        imageSrc: 'statics/dish9.png',
+        imageAlt: 'Steak',
+        category: 'Food',
+        title: 'Steak',
+        excerpt: 'Historia steka: Steak jest popularnym daniem mięsnym, szczególnie cenionym przez miłośników wołowiny. Historia steka sięga starożytnych czasów, kiedy to ludzie zaczęli spożywać mięso z zwierząt łownych. Jednak jako potrawa specjalna i rytualna, przygotowanie steka zaczęło się rozwijać wraz z rozwojem technik kulinarnych i sztuki grillowania. Dziś stek jest często podawany z różnymi dodatkami, takimi jak sosy, warzywa czy ziemniaki.'
+    },  
+    {
+        imageSrc: 'statics/dish10.png',
+        imageAlt: 'Kebab',
+        category: 'Food',
+        title: 'Kebab',
+        excerpt: 'Historia kebaba: Kebab jest tradycyjnym daniem kuchni Bliskiego Wschodu, które ma długą historię sięgającą starożytności. Pierwsze wzmianki o kebabie można znaleźć w starożytnych tekstach perskich datowanych na I tysiąclecie p.n.e. Kebab składa się z kawałków mięsa, takich jak wołowina, baranina, kurczak lub mięso mielone, które są grillowane na rożnie lub smażone. Kebab jest często podawany wraz z warzywami, sałatkami i sosem.'
+    }
+
 ];
 
-// Wygenerowanie blok�w artyku��w na podstawie danych z pliku
-const articleContainer = document.getElementById('article-container');
+const articleContainer = document.getElementsByClassName('article-container')[0];
 
 articleDataFromFile.forEach(data => {
-    // Tworzenie element�w HTML dla artyku�u
-    const articleCard = document.createElement('article');
-    articleCard.setAttribute('class', 'article-card');
-
+    const article = document.createElement('article');
     const figure = document.createElement('figure');
-    figure.setAttribute('class', 'article-image');
-
     const img = document.createElement('img');
-    img.setAttribute('src', data.imageSrc);
-    img.setAttribute('alt', data.imageAlt);
+    const div = document.createElement('div');
+    const a = document.createElement('a');
+    const h3 = document.createElement('h3');
+    const p = document.createElement('p');
 
-    const articleContent = document.createElement('div');
-    articleContent.setAttribute('class', 'article-content');
+    article.className = 'article-card';
+    figure.className = 'article-image';
+    div.className = 'article-content';
+    a.className = 'card-category';
+    h3.className = 'card-title';
+    p.className = 'card-excerpt';
 
-    const categoryLink = document.createElement('a');
-    categoryLink.setAttribute('href', '#');
-    categoryLink.setAttribute('class', 'card-category');
-    categoryLink.textContent = data.category;
+    img.src = data.imageSrc;
+    img.alt = data.imageAlt;
+    a.href = '#';
+    a.textContent = data.category;
+    h3.textContent = data.title;
+    p.textContent = data.excerpt;
 
-    const title = document.createElement('h3');
-    title.setAttribute('class', 'card-title');
-    title.textContent = data.title;
-
-    const excerpt = document.createElement('p');
-    excerpt.setAttribute('class', 'card-excerpt');
-    excerpt.textContent = data.excerpt;
-
-    // Dodawanie utworzonych element�w do struktury artyku�u
     figure.appendChild(img);
-    articleContent.appendChild(categoryLink);
-    articleContent.appendChild(title);
-    articleContent.appendChild(excerpt);
+    div.appendChild(a);
+    div.appendChild(h3);
+    div.appendChild(p);
+    article.appendChild(figure);
+    article.appendChild(div);
 
-    articleCard.appendChild(figure);
-    articleCard.appendChild(articleContent);
-
-    // Dodawanie artyku�u do kontenera
-    articleContainer.appendChild(articleCard);
+    articleContainer.appendChild(article);
 });
+
+
+
+
+
+
