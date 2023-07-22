@@ -182,10 +182,17 @@ function showArticleDetails(event) {
 }
 
 
-
-
-
 const articleCards = document.getElementsByClassName('article-card');
 Array.from(articleCards).forEach(card => {
     card.addEventListener('click', showArticleDetails);
+});
+
+
+const ShowMoreDetails = (event) =>{
+    const articleData = articleDataFromFile.find(data => data.id == event.currentTarget.id);
+    console.log("Double tapped on card id: "+ articleData.id);
+}
+
+Array.from(articleCards).forEach(card => {
+    card.addEventListener('dblclick', ShowMoreDetails);
 });
