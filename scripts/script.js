@@ -228,14 +228,39 @@ Array.from(articleCards).forEach(card => {
     card.addEventListener('click', showArticleDetails);
 });
 
+const showPopup = (articleData) => {
+    const popup = document.getElementById('popup');
+    const popupContent = `
+    <span class="close-btn" id="close-btn">&times;</span>
+    <div class="popup-content">
+      <img src="${articleData.imageSrc}" alt="${articleData.imageAlt}" class="popup-image">
+      <h3><div class="popup-category">${articleData.category}</div>${articleData.title} </h2>
+      <p>${articleData.excerpt}</p>
+      <p><strong>Allergens:</strong><br> ${articleData.allergens}</p>
+      <p><strong>How to prepare:</strong><br>${articleData.how2}</p>
+      <p><strong>Others:</strong><br>${articleData.others}</p>
+    </div>`;
 
-
-
-const ShowMoreDetails = (event) =>{
-    const articleData = MockupData.find(data => data.id == event.currentTarget.id);
-    console.log("Double tapped on card id: "+ articleData.id);
+    popup.innerHTML = popupContent;
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
 }
-Array.from(articleCards).forEach(card => {
-    card.addEventListener('dblclick', ShowMoreDetails);
-});
-
+  
+const closePopup = () => {
+    const popup = document.getElementById('popup');
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+  }
+  
+  Array.from(articleCards).forEach(card => {
+    card.addEventListener('dblclick', (event) => {
+      const articleData = MockupData.find(data => data.id == event.currentTarget.id);
+      showPopup(articleData);
+    });
+  });
+  
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('close-btn') || event.target.id === 'popup' || event.target.id === 'overlay') 
+      closePopup();
+  });
+  

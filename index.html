@@ -6,16 +6,10 @@
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
     <link href="css/webkits.css" rel="stylesheet" />
-
-
-    <!--
     <link href="css/animations.css" rel="stylesheet"/>
-     -->
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <title>FoodMenu</title>
 </head>
 <body>
@@ -24,8 +18,9 @@
 <header>
     <h1>Odin Recipes</h1>
 </header>
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup"></div>
 <div class="content">
-
     <div class="finder">
         <form action="https://www.google.com/search" method="get" class="finder-bar">
             <input type="text" oninput ="filterContentByString()" placeholder="Search for best food here" name="q">
@@ -60,12 +55,6 @@
         <p>Project for Odin courses by: <b>matorolll</b>, 2023</p>
     </div>
 </footer>
-
-<aside>
-    <h3>My Card</h3>
-    <p>Double click to resize this object.</p>
-  </aside>
-
 <script src="scripts/script.js"></script>
 </body>
 </html>
