@@ -8,6 +8,8 @@
     background: rgb(102, 95, 95);
     padding: 20px;
     z-index: 9999;
+    height:90%;
+    overflow-y:scroll;
 }
   
 .popup-image {
